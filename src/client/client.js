@@ -11,6 +11,7 @@
 	var start = null;
 	var drawingArea;
 	var documentBody;
+	var mouseIsDown;
 
 	exports.initializeDrawingArea = function(htmlElement) {
 		if (svgCanvas !== null) throw new Error("Client.js is not re-entrant");
@@ -29,7 +30,11 @@
 	function handleDragEvents() {
 		preventDefaults();
 
+		documentBody.onMouseDown(registerMouseDown);
+		documentBody.onMouseUp(registerMouseUp);
+		
 		drawingArea.onMouseDown(startDrag);
+		drawingArea.onMouseEnter(startDragIfMouseDown);
 		drawingArea.onMouseMove(continueDrag);
 		drawingArea.onMouseLeave(endDrag);
 		drawingArea.onMouseUp(endDrag);
@@ -56,9 +61,23 @@
 			event.preventDefault();
 		});
 	}
+	
+	function registerMouseUp() {
+		mouseIsDown = false;
+	}
+	
+	function registerMouseDown() {
+		mouseIsDown = true;
+	}
 
 	function startDrag(offset) {
 		start = offset;
+	}
+	
+	function startDragIfMouseDown(offset) {
+		if (mouseIsDown) {
+		   start = offset;
+		}
 	}
 
 	function continueDrag(relativeOffset) {

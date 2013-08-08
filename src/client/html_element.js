@@ -43,6 +43,10 @@
 	HtmlElement.prototype.doMouseLeave = function(relativeX, relativeY) {
 		sendMouseEvent(this, "mouseleave", relativeX, relativeY);
 	};
+	
+	HtmlElement.prototype.doMouseEnter = function(relativeX, relativeY) {
+		sendMouseEvent(this, "mouseenter", relativeX, relativeY);
+	};
 
 	HtmlElement.prototype.doMouseUp = function(relativeX, relativeY) {
 		sendMouseEvent(this, "mouseup", relativeX, relativeY);
@@ -83,6 +87,10 @@
 
 	HtmlElement.prototype.onMouseLeave = function(callback) {
 		this._element.mouseleave(mouseEventHandlerFn(this, callback));
+	};
+	
+	HtmlElement.prototype.onMouseEnter = function(callback) {
+		this._element.mouseenter(mouseEventHandlerFn(this, callback));
 	};
 
 	HtmlElement.prototype.onMouseUp = function(callback) {
