@@ -1,0 +1,94 @@
+{
+  "name": "dfjones1981/lets_code_javascript",
+  "version": "0.1.4",
+  "libraries": {
+    "xv": "^1.1.25"
+  },
+  "title": "",
+  "branch": "",
+  "style": {
+    "name": "Material",
+    "componentSet": {
+      "nav": "nav/DarkAbsoluteNav",
+      "header": "header/GradientHeader",
+      "article": "article/BasicArticle",
+      "footer": "footer/BasicFooter"
+    },
+    "fontFamily": "Roboto, sans-serif",
+    "heading": {
+      "fontWeight": 500,
+      "letterSpacing": "-0.01em"
+    },
+    "colors": {
+      "text": "#212121",
+      "background": "#fff",
+      "primary": "#2196f3",
+      "secondary": "#1565c0",
+      "highlight": "#ff4081",
+      "border": "#e0e0e0",
+      "muted": "#f5f5f5"
+    },
+    "layout": {
+      "centered": true,
+      "bannerHeight": "80vh",
+      "maxWidth": 896
+    }
+  },
+  "content": [
+    {
+      "component": "nav",
+      "links": [
+        {
+          "href": "http://letscodejavascript.com",
+          "text": "Home"
+        },
+        {
+          "href": "https://github.com/dfjones1981/lets_code_javascript",
+          "text": "GitHub"
+        },
+        {
+          "href": "https://npmjs.com/package/weewikipaint",
+          "text": "npm"
+        }
+      ]
+    },
+    {
+      "component": "header",
+      "heading": "lets_code_javascript",
+      "subhead": "Let's Code: Test-Driven Javascript. A screencast series about rigorous, professional web development.",
+      "children": [
+        {
+          "component": "ui/TweetButton",
+          "text": "lets_code_javascript: Let's Code: Test-Driven Javascript. A screencast series about rigorous, professional web development.",
+          "url": "http://letscodejavascript.com"
+        },
+        {
+          "component": "ui/GithubButton",
+          "user": "dfjones1981",
+          "repo": "lets_code_javascript"
+        }
+      ],
+      "text": "v0.0.1"
+    },
+    {
+      "component": "article",
+      "metadata": {
+        "source": "github.readme"
+      },
+      "html": "<h1>Let&apos;s Code: Test-Driven Javascript</h1>\n<p>&quot;Let&apos;s Code: Test-Driven Javascript&quot; is a screencast series focusing on\nrigorous, professional web development. For more information, visit\n<a href=\"http://letscodejavascript.com\">http://letscodejavascript.com</a> .</p>\n<p>This repository contains the source code for WeeWikiPaint, the application\nbeing developed in the series.</p>\n<h2>Before building or running for the first time:</h2>\n<ol>\n<li>Install <a href=\"http://nodejs.org/download/\">Node.js</a></li>\n<li>Install <a href=\"http://git-scm.com/downloads\">Git</a></li>\n<li>Clone source repository: <code>git clone https://github.com/jamesshore/lets_code_javascript.git</code></li>\n<li>All commands must run from root of repository: <code>cd lets_code_javascript</code></li>\n</ol>\n<p><em>Note:</em> If you update the repository (with <code>git pull</code> or similar), be sure to erase generated files with <code>git clean -fdx</code> afterwards. (Note that this will erase any changes you&apos;ve made, so be sure to check in what you want to keep first.)</p>\n<h2>To build and test:</h2>\n<ol>\n<li>Run <code>./jake.sh karma</code> (Unix/Mac) or <code>jake karma</code> (Windows)</li>\n<li>Navigate at least one browser to <a href=\"http://localhost:8080\">http://localhost:8080</a></li>\n<li>Run <code>./jake.sh loose=true</code> (Unix/Mac) or <code>jake loose=true</code> (Windows)</li>\n</ol>\n<p><em>Note:</em> The master branch is not guaranteed to build successfully. For a known-good build (tested on Mac and Windows, and assumed to work on Linux), use the integration branch:</p>\n<ol>\n<li>Change to the integration branch: <code>git checkout integration</code></li>\n<li>Erase generated files: <code>git clean -fdx</code> (Note that this will erase <em>all</em> new files, so be sure to check in anything you want to keep.)</li>\n<li>Stop Karma, if it&apos;s running</li>\n<li>Build using the steps above</li>\n<li>To change back to the development branch, follow these steps again using <code>git checkout master</code></li>\n</ol>\n<h2>To run locally:</h2>\n<ol>\n<li>Run <code>./jake.sh run</code> (Unix/Mac) or <code>jake run</code> (Windows)</li>\n<li>Navigate a browser to <a href=\"http://localhost:5000\">http://localhost:5000</a></li>\n</ol>\n<p><em>Note:</em> The master branch is not guaranteed to run successfully. For a known-good build, use the integration branch as described above.</p>\n<h2>Before deploying for first time:</h2>\n<ol>\n<li>Make sure code is in Git repository (clone GitHub repo, or &apos;git init&apos; yours)</li>\n<li>Install <a href=\"https://toolbelt.heroku.com/\">Heroku Toolbelt</a></li>\n<li>Sign up for a <a href=\"https://id.heroku.com/signup\">Heroku account</a></li>\n<li>Run <code>heroku create &lt;app_name&gt;</code> (requires git repository and Heroku account)</li>\n<li>Search codebase for <code>weewikipaint.herokuapp.com</code> URLs and change them to refer to </li>\n<li>Push known-good deploy to Heroku: <code>git push heroku episode32:master</code></li>\n</ol>\n<h2>To deploy:</h2>\n<ol>\n<li>Run <code>./jake.sh deploy</code> (Unix/Mac) or <code>jake deploy</code> (Windows)</li>\n</ol>\n<p><em>Note:</em> The master and integration branches are not guaranteed to deploy successfully. The last known-good deploy was commit eccf8da793aef7871ab1fcc104b7f64d79986681. We&apos;ll establish better deployment practices in a future chapter of the screencast.</p>\n"
+    },
+    {
+      "component": "footer",
+      "links": [
+        {
+          "href": "https://github.com/dfjones1981/lets_code_javascript",
+          "text": "GitHub"
+        },
+        {
+          "href": "https://github.com/dfjones1981",
+          "text": "dfjones1981"
+        }
+      ]
+    }
+  ]
+}
